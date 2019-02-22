@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "type": "Pilsner",
+    "min": -6,
+    "max": -4
+  },
+  {
+    "id": 2,
+    "type": "IPA",
+    "min": -6,
+    "max": -5
+  },
+  {
+    "id": 3,
+    "type": "Lager",
+    "min": -7,
+    "max": -4
+  },
+  {
+    "id": 4,
+    "type": "Stout",
+    "min": -8,
+    "max": -6
+  },
+  {
+    "id": 5,
+    "type": "Wheat beer",
+    "min": -5,
+    "max": -3
+  },
+  {
+    "id": 6,
+    "type": "Pale Ale",
+    "min": -6,
+    "max": -4
+  }
+]

@@ -12,5 +12,5 @@ if (!beersData || beersData.length <= 0) {
   console.warn('No Beers to look after today...')
 } else {
   const beerObjects = beersData.map((d) => new Beer(d))
-  BeerConsole.init(beerObjects, RandomThermostat)
+  setInterval(() => BeerConsole.init(beerObjects, RandomThermostat), 5000)
 }

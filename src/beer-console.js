@@ -7,7 +7,7 @@ const BeerConsole = {
         const beer = beers[index]
         const temperature = thermostat.getTemperature(beer)
         if (beer.inThaw(temperature)) {
-          console.warn(`*-> Beer ${beer.id} (${beer.type}) with the temperature above ideal: ${temperature}`)
+          console.warn(`*-> Beer ${beer.id} (${beer.type}) heating: ${temperature} [Ideal: ${beer.max}]`)
         } else {
           console.info(`Beer ${beer.id} (${beer.type}) at ${temperature} degrees.`)
         }

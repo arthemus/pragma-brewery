@@ -3,9 +3,12 @@
 const RandomThermostat = {
   getTemperature (beer) {
     if (beer) {
-      return Math.floor(Math.random() * beer.min)
+      if (beer.min) {
+        return Math.floor(Math.random() * beer.min)
+      }
+      return 0
     } else {
-      console.error(`Beer ${beer} not found.`)
+      throw Error(`Beer ${beer} not found.`)
     }
   }
 }

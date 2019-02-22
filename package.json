@@ -13,5 +13,10 @@
   "scripts": {
     "start": "node index.js data/mock-beers.json",
     "test": "jest"
+  },
+  "standard": {
+    "env": [
+      "jest"
+    ]
   }
 }

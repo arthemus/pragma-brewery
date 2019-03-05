@@ -11,7 +11,7 @@ app.use(cors({
   optionsSuccessStatus: 200
 }))
 
-app.use(express.static('frontend/build'))
+app.use(express.static(__dirname + 'frontend/build'))
 require('./backend/src/route/main.route')(app)
 
 const PORT = process.env.PORT || 4000

@@ -1,0 +1,28 @@
+{
+  "name": "pragma-brewery-frontend",
+  "description": "Frontend side for the PragmaTeam Developer Test",
+  "version": "1.0.0",
+  "repository": "git@bitbucket.org:arthemus/pragma-brewery.git",
+  "author": "Arthemus <arthemus.moreira@gmail.com>",
+  "private": true,
+  "dependencies": {
+    "react": "~16.8.3",
+    "react-dom": "~16.8.3",
+    "react-scripts": "2.1.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "standard && react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "standard": "12.0.1"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}

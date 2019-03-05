@@ -7,9 +7,9 @@ const BeerController = require('./../controllers/beer.controller')
 const RandomThermostat = require('./../thermostats/random.thermostat')
 
 const Main = (app) => {
-  app.get('/', (req, res) => {
+  app.get('/api/', (req, res) => {
     try {
-      const beersData = JSON.parse(fs.readFileSync('./data/mock-beers.json', 'utf8'))
+      const beersData = JSON.parse(fs.readFileSync(__dirname + '/../../data/mock-beers.json', 'utf8'))
       const beerObjects = beersData.map((d) => new Beer(d))
       const manager = BeerController.init(beerObjects, RandomThermostat)
       const beersLogResult = manager.run()

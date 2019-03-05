@@ -1,18 +1,19 @@
 'use strict;'
 
-const fs = require('fs')
-const Beer = require('./src/model/beer')
-const BeerConsole = require('./src/beer-console')
-const RandomThermostat = require('./src/thermostats/random-thermostat')
+require('dotenv').config()
 
-const args = process.argv.slice(2)[0]
-const sourceData = args || './data/mock-beers.json'
-const beersData = JSON.parse(fs.readFileSync(sourceData, 'utf8'))
-const beerObjects = beersData.map((d) => new Beer(d))
-setInterval(() => BeerConsole.init(beerObjects, RandomThermostat), 5000)
+const express = require('express')
+const cors = require('cors')
+const app = express()
 
-// const express = require("express");
-// const PORT = process.env.PORT || 8000;
-// const app = express();
-// app.use(express.static("./frontend/dist/"));
-// app.listen(PORT, () => console.log(`Talent View listening on port ${PORT}!`));
+app.use(cors({
+  origin: process.env.FRONTEND_HOST || 'http://localhost:3000',
+  optionsSuccessStatus: 200
+}))
+
+app.use(express.static('./frontend/build/'))
+require('./backend/src/route/main.route')(app)
+
+const PORT = process.env.PORT || 4000
+
+app.listen(PORT, () => console.log(`Brewery listening on port ${PORT}!`))

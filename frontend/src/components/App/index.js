@@ -17,7 +17,7 @@ class BeersListBase extends React.Component {
   componentDidMount () {
     this.interval = setInterval(() => {
       this.setState({ isLoading: true })
-      window.fetch(this.props.server.host)
+      window.fetch(`${this.props.server.host}/api`)
         .then((response) => response.json())
         .then((data) => {
           this.setState({ beers: data, isLoading: false })

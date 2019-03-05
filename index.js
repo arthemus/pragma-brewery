@@ -17,7 +17,7 @@ app.use(favicon(path.join(__dirname, '/frontend/build/favicon.ico')))
 app.use(express.static(__dirname))
 app.use(express.static(path.join(__dirname, 'frontend/build')))
 
-require('./backend/src/route/main.route')(app)
+// require('./backend/src/route/main.route')(app)
 
 app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, 'frontend/build', 'index.html'))

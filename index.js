@@ -12,7 +12,7 @@ app.use(cors({
 }))
 
 app.use(express.static(__dirname + '/frontend/build'))
-require('./backend/src/route/main.route')(app)
+// require('./backend/src/route/main.route')(app)
 
 const PORT = process.env.PORT || 4000
 

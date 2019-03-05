@@ -25,6 +25,7 @@ class BeersListBase extends React.Component {
         })
     }, 5000)
   }
+
   componentWillUnmount () {
     clearInterval(this.interval)
   }
@@ -58,7 +59,7 @@ const BeersList = withServer(BeersListBase)
 const App = () => (
   <div className='container'>
     <center>
-      <h3>Current Beers</h3>
+      <h3>Current Temperature of Beers</h3>
       <hr />
       <BeersList />
     </center>

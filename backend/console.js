@@ -1,6 +1,7 @@
 'use strict;'
 
 const fs = require('fs')
+
 const Beer = require('./src/model/beer')
 const BeerController = require('./src/controllers/beer.controller')
 const RandomThermostat = require('./src/thermostats/random.thermostat')

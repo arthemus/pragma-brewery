@@ -14,7 +14,8 @@
     "standard": "12.0.1"
   },
   "scripts": {
-    "start": "node index.js data/mock-beers.json",
+    "console": "node console.js data/mock-beers.json",
+    "server": "node express.js data/mock-beers.json",
     "test": "jest"
   },
   "standard": {

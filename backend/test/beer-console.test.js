@@ -1,14 +1,13 @@
 'use strict;'
 
-const BeerConsole = require('./../src/beer-console')
+const BeerController = require('./../src/controllers/beer.controller')
 
 console.warn = jest.fn()
 
 test('Not identify a thermostat null.', () => {
-  expect(() => BeerConsole.init([], null)).toThrow()
+  expect(() => BeerController.init([], null).run()).toThrow()
 })
 
 test('Expect a console warn about the beers empty.', () => {
-  BeerConsole.init([], {})
-  expect(console.warn).toHaveBeenCalled()
+  expect(BeerController.init([], {}).run()).toBe('No Beers to look after today...')
 })

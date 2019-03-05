@@ -12,7 +12,7 @@ ReactDOM.render(
   <ServerContext.Provider value={Server}>
     <App />
   </ServerContext.Provider>,
-  document.getElementById('root')
+  document.querySelector('[data-js="root"]')
 )
 
 serviceWorker.unregister()

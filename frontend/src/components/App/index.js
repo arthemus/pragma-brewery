@@ -39,12 +39,12 @@ class BeersListBase extends React.Component {
     return (
       <div>
         <ul className='list-group'>
-          {beers.map((b) => {
+          {beers.map((b, index) => {
             let colorClass = 'list-group-item list-group-item-light'
             if (b.indexOf('heating') > -1) {
               colorClass = 'list-group-item list-group-item-danger'
             }
-            return <li className={colorClass}>{b}</li>
+            return <li key={index} className={colorClass}>{b}</li>
           })}
           <li className='list-group-item'><kbd>List updated at {time}</kbd></li>
         </ul>

@@ -11,6 +11,8 @@ app.use(cors({
   optionsSuccessStatus: 200
 }))
 
+console.log(process.env.FRONTEND_HOST)
+
 app.use(express.static('frontend/build'))
 require('./backend/src/route/main.route')(app)
 

@@ -1,19 +1,20 @@
 'use strict;'
 
-let beers = []
-
-let thermostat = {}
-
 const BeerController = {
 
   init (beers, thermostat) {
     if (!thermostat) {
       throw Error('Console can not read the Thermostat interface')
     }
-    this.thermostat = thermostat
+    return new BeerManager(beers, thermostat)
+  }
+}
+
+class BeerManager {
+  constructor (beers = [], thermostat) {
     this.beers = beers
-    return this
-  },
+    this.thermostat = thermostat
+  }
 
   run () {
     if (this.beers && this.beers.length > 0) {

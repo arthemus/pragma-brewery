@@ -1,6 +1,6 @@
-# Pragma Brewery System
+# Pragma Brewery Backend Side
 
-This a programatic test from PragmaTeam about Shane, a driver Micro Brewery.
+This is the PragmaTeam program test frontend layer. A unique and simple dynamic page that lists the current temperature of each beer carried by the driver.
 
 ## To Run
 ### Install the dependencies
@@ -9,28 +9,46 @@ This a programatic test from PragmaTeam about Shane, a driver Micro Brewery.
 npm install
 ```
 
-Or just `Yarn`
+Or
+
+```
+yarn
+```
+
+### Define the client address
+
+It is necessary to define an `.env` file in the root of the `backend` module, with a single variable `FRONTEND_HOST` that should point to the address where the `frontend` module is running. This is necessary to configure the `CORS` module and allow the frontend layer to access the data from the backend layer.
+
+For exemple:
+
+```
+FRONTEND_HOST=http://localhost:3000
+```
 
 ### Run localy with you console
 
+It is possible to run the backend layer in two ways: 
+
+The first is a simple `log` system that prints the current temperature of the beers on the console. You can run this system with the command below:
+
 ```
-npm start
+node console.js
 ```
 
-Or 
+The second option is to run the server itself which will expose a `REST` endpoint that returns a list with the current temperature of each beer. Run the following command to run the server:
+
 ```
-yarn start
+node express.js
 ```
 
-This project use a simple `console.log` operation to show the state from each Beer that Shane is delivering with his truck.
+The REST endpoint can also be accessed by the browser through the address:
 
-The file `random-thermostat.js` is a example of a good point that can be change in the future with a new version of this system. I am imagining in a real scenary we can have a fisical sessor and one interface to get the real temperature from ther beers. This random function is just one test to get different results and situations in the test scenary.
+```
+http://localhost:4000/api
+```
 
-## TODO
-1 - Have to have an user interface for this solution? Maybe for a future version, for now we can work with 'console logs'.
+The file `src/thermostats/random.thermostat.js` is a example of a good point that can be change in the future with a new version of this system. I am imagining in a real scenary we can have a fisical sessor and one interface to get the real temperature from ther beers. This random function is just one test to get different results and situations in the test scenary.
 
-2 - It's a server-side or client-side application? For now, we can use a simple JavaScript index file that can be running with a Node.js or with a HTML file.
+### TODO
 
-3 - For the version 2.0, we can have a real phisical sensor that will return the real temperatures.
-
-4 - For the version 2.0, we can show diferent messages and colors if the temperature is above or below ideal.
+1 - For the version 2.0, we can have a real phisical sensor that will return the real temperatures.

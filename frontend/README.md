@@ -1,6 +1,6 @@
-# Pragma Brewery System
+# Pragma Brewery Frontend Side
 
-This a programatic test from PragmaTeam about Shane, a driver Micro Brewery.
+This is the PragmaTeam program test frontend layer. A unique and simple dynamic page that lists the current temperature of each beer carried by the driver.
 
 ## To Run
 ### Install the dependencies
@@ -9,28 +9,38 @@ This a programatic test from PragmaTeam about Shane, a driver Micro Brewery.
 npm install
 ```
 
-Or just `Yarn`
+Or
 
-### Run localy with you console
+```
+yarn
+```
+
+### Define the server address
+
+It is necessary to define an `.env` file in the root of the `frontend` module, with a single variable `REACT_APP_HOST` that should point to the address where the `backend` module is running. 
+
+For exemple:
+
+```
+REACT_APP_HOST=http://localhost:4000
+```
+
+### Run localy
+
+Make sure the backend module is running and run:
 
 ```
 npm start
 ```
 
 Or 
+
 ```
 yarn start
 ```
 
-This project use a simple `console.log` operation to show the state from each Beer that Shane is delivering with his truck.
+This module was built with the help of the standard `React` project generator. When you run it, you can access the application from the address `http://localhost:4000`.
 
-The file `random-thermostat.js` is a example of a good point that can be change in the future with a new version of this system. I am imagining in a real scenary we can have a fisical sessor and one interface to get the real temperature from ther beers. This random function is just one test to get different results and situations in the test scenary.
+### TODO
 
-## TODO
-1 - Have to have an user interface for this solution? Maybe for a future version, for now we can work with 'console logs'.
-
-2 - It's a server-side or client-side application? For now, we can use a simple JavaScript index file that can be running with a Node.js or with a HTML file.
-
-3 - For the version 2.0, we can have a real phisical sensor that will return the real temperatures.
-
-4 - For the version 2.0, we can show diferent messages and colors if the temperature is above or below ideal.
+1 - Improve the design part by providing a more modern look with more informations.

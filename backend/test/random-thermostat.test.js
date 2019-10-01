@@ -10,3 +10,8 @@ test('Tring get a temperature for a Beer undefined.', () => {
 test('If the temperature is not defined, return zero.', () => {
   expect(RandomThermostat.getTemperature(Object.assign(new Beer({}), { min: null }))).toBe(0)
 })
+
+test('Expect an exception for Beer not found.', () => {
+  expect(() => RandomThermostat.getTemperature(null))
+    .toThrowError(Error('Beer null not found.'))
+})

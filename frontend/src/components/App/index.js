@@ -15,19 +15,24 @@ class BeersListBase extends React.Component {
   }
 
   componentDidMount () {
-    this.interval = setInterval(() => {
-      this.setState({ isLoading: true })
-      window.fetch(`${this.props.server.host}/api`)
-        .then((response) => response.json())
-        .then((data) => {
-          this.setState({ beers: data, isLoading: false })
-          this.setState({ time: new Date().toLocaleTimeString() })
-        })
-    }, 5000)
+    this.fetchBeers()
   }
 
   componentWillUnmount () {
     clearInterval(this.interval)
+  }
+
+  fetchBeers () {
+    this.interval = setInterval(() => {
+      this.setState({ isLoading: true })
+      window
+        .fetch(`${this.props.server.host}/api`)
+        .then(response => response.json())
+        .then(data => {
+          this.setState({ beers: data, isLoading: false })
+          this.setState({ time: new Date().toLocaleTimeString() })
+        })
+    }, 5000)
   }
 
   render () {
@@ -45,9 +50,15 @@ class BeersListBase extends React.Component {
             if (b.indexOf('heating') > -1) {
               colorClass = 'list-group-item list-group-item-danger'
             }
-            return <li key={index} className={colorClass}>{b}</li>
+            return (
+              <li key={index} className={colorClass}>
+                {b}
+              </li>
+            )
           })}
-          <li className='list-group-item'><kbd>List updated at {time}</kbd></li>
+          <li className='list-group-item'>
+            <kbd>List updated at {time}</kbd>
+          </li>
         </ul>
       </div>
     )

@@ -2,8 +2,6 @@
 
 const BeerController = require('./../src/controllers/beer.controller')
 
-console.warn = jest.fn()
-
 test('Not identify a thermostat null.', () => {
   expect(() => BeerController.init([], null).run()).toThrow()
 })

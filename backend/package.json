@@ -2,7 +2,7 @@
   "name": "pragma-brewery-backend",
   "description": "Backend side for the PragmaTeam Developer Test",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "console.js",
   "repository": "git@bitbucket.org:arthemus/pragma-brewery.git",
   "author": "Arthemus <arthemus.moreira@gmail.com>",
   "private": true,

@@ -27,7 +27,7 @@ REACT_APP_HOST=http://localhost:4000
 
 ### Run localy
 
-Make sure the backend module is running and run:
+Make sure the backend module is running and execute:
 
 ```
 npm start
@@ -39,8 +39,8 @@ Or
 yarn start
 ```
 
-This module was built with the help of the standard `React` project generator. When you run it, you can access the application from the address `http://localhost:4000`.
+This module was built with the help of the standard `React` project generator. When you run it, you can access the application from the address `http://localhost:3000`.
 
 ### TODO
 
-1 - Improve the design part by providing a more modern look with more informations.
+1 - Improving UX design providing a modern view.
